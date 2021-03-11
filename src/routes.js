@@ -10,6 +10,8 @@ import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
 import NotificationsPage from "views/Notifications/Notifications.js";
+import KaryawanList from "views/TableList/KaryawanList";
+import RolesList from "views/TableList/RolesList";
 // core components/views for RTL layout
 
 const dashboardRoutes = [
@@ -31,7 +33,7 @@ const dashboardRoutes = [
     path: "/list",
     name: "Karyawan",
     icon: "content_paste",
-    component: TableList,
+    component: KaryawanList,
     layout: "/admin"
   },
   {
@@ -45,7 +47,7 @@ const dashboardRoutes = [
     path: "/roles",
     name: "Jabatan",
     icon: BubbleChart,
-    component: Icons,
+    component: RolesList,
     layout: "/admin"
   },
   {
