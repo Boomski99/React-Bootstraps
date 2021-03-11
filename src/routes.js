@@ -15,35 +15,35 @@ import NotificationsPage from "views/Notifications/Notifications.js";
 const dashboardRoutes = [
   {
     path: "/dashboard",
-    name: "Dashboard",
+    name: "Dashbor",
     icon: Dashboard,
     component: DashboardPage,
     layout: "/admin"
   },
   {
     path: "/Management",
-    name: "Management",
+    name: "Manajemen",
     icon: Person,
     component: UserProfile,
     layout: "/admin"
   },
   {
     path: "/list",
-    name: "List Pegawai",
+    name: "Karyawan",
     icon: "content_paste",
     component: TableList,
     layout: "/admin"
   },
   {
-    path: "/typography",
-    name: "Typography",
+    path: "/departmen",
+    name: "Departemen",
     icon: LibraryBooks,
-    component: Typography,
+    component: TableList,
     layout: "/admin"
   },
   {
-    path: "/icons",
-    name: "Icons",
+    path: "/roles",
+    name: "Jabatan",
     icon: BubbleChart,
     component: Icons,
     layout: "/admin"
