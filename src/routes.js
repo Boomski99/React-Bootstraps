@@ -10,42 +10,44 @@ import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
 import NotificationsPage from "views/Notifications/Notifications.js";
+import KaryawanList from "views/TableList/KaryawanList";
+import RolesList from "views/TableList/RolesList";
 // core components/views for RTL layout
 
 const dashboardRoutes = [
   {
     path: "/dashboard",
-    name: "Dashboard",
+    name: "Dashbor",
     icon: Dashboard,
     component: DashboardPage,
     layout: "/admin"
   },
   {
     path: "/Management",
-    name: "Management",
+    name: "Manajemen",
     icon: Person,
     component: UserProfile,
     layout: "/admin"
   },
   {
     path: "/list",
-    name: "List Pegawai",
+    name: "Karyawan",
     icon: "content_paste",
+    component: KaryawanList,
+    layout: "/admin"
+  },
+  {
+    path: "/departmen",
+    name: "Departemen",
+    icon: LibraryBooks,
     component: TableList,
     layout: "/admin"
   },
   {
-    path: "/typography",
-    name: "Typography",
-    icon: LibraryBooks,
-    component: Typography,
-    layout: "/admin"
-  },
-  {
-    path: "/icons",
-    name: "Icons",
+    path: "/roles",
+    name: "Jabatan",
     icon: BubbleChart,
-    component: Icons,
+    component: RolesList,
     layout: "/admin"
   },
   {

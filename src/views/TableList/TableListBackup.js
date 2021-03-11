@@ -44,8 +44,22 @@ const styles = {
 const useStyles = makeStyles(styles);
 
 
-export default function TableList({columns, data}) {
+export default function TableList() {
   const classes = useStyles();
+  const [datas, setData] = useState();
+
+  useEffect(() => {
+    const newDatas = Axios.get('http://localhost/msdm-backend/employees.php', {params: {code: 2}});
+    newDatas.then((res) => setData(res.data)).catch((e) => console.log(e));
+  }, [])
+
+  console.log(datas)
+
+  if (!datas) return (<p>loading</p>)
+
+  const preprocessedData = datas.payload.map(({nama, jabatan, jam_kerja, gaji, gaji_bersih}) => (
+    [nama, jabatan, jam_kerja, gaji, gaji_bersih]
+  ))
 
   return (
     <GridContainer>
@@ -60,9 +74,9 @@ export default function TableList({columns, data}) {
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={columns}
+              tableHead={["Nama", "Jabatan", "Jam Kerja", "Gaji", "Gaji Bersih"]}
               tableData={[
-                ...data
+                ...preprocessedData
               ]}
             />
           </CardBody>
