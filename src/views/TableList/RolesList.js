@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Axios from 'axios';
 import TableList from './TableList';
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 export default function RolesList() {
 
@@ -19,6 +21,13 @@ export default function RolesList() {
   ))
 
   return (
-    <TableList data={preprocessedData} columns={columns} />
+    <>
+      <TableList data={preprocessedData} columns={columns} />
+      <Link
+        to="/admin/roles/new"
+      >
+        <Button color={"primary"}>Tambah Data Jabatan</Button>
+      </Link>
+    </>
   )
 }

@@ -8,6 +8,8 @@ import UserProfile from "views/UserProfile/UserProfile.js";
 import TableList from "views/TableList/TableList.js";
 import KaryawanList from "views/TableList/KaryawanList";
 import RolesList from "views/TableList/RolesList";
+import DepartmentList from "views/TableList/DepartmentList";
+import NewRoles from "views/TableList/insertion/NewRoles";
 // core components/views for RTL layout
 
 const dashboardRoutes = [
@@ -36,7 +38,7 @@ const dashboardRoutes = [
     path: "/departmen",
     name: "Departemen",
     icon: LibraryBooks,
-    component: TableList,
+    component: DepartmentList,
     layout: "/admin"
   },
   {
@@ -44,6 +46,12 @@ const dashboardRoutes = [
     name: "Jabatan",
     icon: BubbleChart,
     component: RolesList,
+    layout: "/admin"
+  },
+  {
+    path: "/roles/new",
+    name: "Jabatan Baru",
+    component: NewRoles,
     layout: "/admin"
   },
 ];

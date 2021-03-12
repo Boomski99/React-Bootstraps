@@ -5,7 +5,7 @@ import TableList from './TableList';
 export default function KaryawanList() {
 
   const [datas, setData] = useState();
-  const columns = ["Nama", "Jabatan", "Jam Kerja", "Gaji", "Gaji Bersih"];
+  const columns = ["Nama", "Jabatan", "Jam Kerja", "Gaji", "Gaji Bersih", "Nama Departemen"];
 
   useEffect(() => {
     const newDatas = Axios.get('http://localhost/msdm-backend/employees.php', {params: {code: 2}});
@@ -14,12 +14,14 @@ export default function KaryawanList() {
 
   if (!datas) return (<p>loading</p>)
 
-  const preprocessedData = datas.payload.map(({nama, jabatan, jam_kerja, gaji, gaji_bersih}) => (
-    [nama, jabatan, jam_kerja, gaji, gaji_bersih]
+  const preprocessedData = datas.payload.map(({nama, jabatan, jam_kerja, gaji, gaji_bersih, nama_departemen}) => (
+    [nama, jabatan, jam_kerja, gaji, gaji_bersih, nama_departemen? nama_departemen: "-"]
   ))
 
 
   return (
-    <TableList data={preprocessedData} columns={columns} />
+    <>
+      <TableList data={preprocessedData} columns={columns} />
+    </>
   )
 }
