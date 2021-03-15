@@ -10,6 +10,8 @@ import KaryawanList from "views/TableList/KaryawanList";
 import RolesList from "views/TableList/RolesList";
 import DepartmentList from "views/TableList/DepartmentList";
 import NewRoles from "views/TableList/insertion/NewRoles";
+import NewKaryawan from "views/TableList/insertion/NewKaryawan";
+import NewDepartemen from "views/TableList/insertion/NewDepartement";
 // core components/views for RTL layout
 
 const dashboardRoutes = [
@@ -35,7 +37,7 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/departmen",
+    path: "/departemen",
     name: "Departemen",
     icon: LibraryBooks,
     component: DepartmentList,
@@ -52,6 +54,18 @@ const dashboardRoutes = [
     path: "/roles/new",
     name: "Jabatan Baru",
     component: NewRoles,
+    layout: "/admin"
+  },
+  {
+    path: "/departemen/new",
+    name: "Departemen Baru",
+    component: NewDepartemen,
+    layout: "/admin"
+  },
+  {
+    path: "/list/new",
+    name: "Karyawan Baru",
+    component: NewKaryawan,
     layout: "/admin"
   },
 ];

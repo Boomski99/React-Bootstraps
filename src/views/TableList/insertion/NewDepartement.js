@@ -38,14 +38,25 @@ export default function NewRoles() {
         <GridItem xs={12} sm={12} md={10}>
           <Card>
             <CardHeader color="info">
-              <h4 className={classes.cardTitleWhite}>Data Jabatan</h4>
-              <p className={classes.cardCategoryWhite}>Ubah Jabatan</p>
+              <h4 className={classes.cardTitleWhite}>Departemen Baru</h4>
+              <p className={classes.cardCategoryWhite}>Tambah data departemen</p>
             </CardHeader>
             <CardBody>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={7}>
                   <CustomInput
                       labelText="Nama Jabatan"
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        disabled: false
+                      }}
+                    />
+                </GridItem>
+                <GridItem xs={12} sm={12} md={10}>
+                  <CustomInput
+                      labelText="Deskripsi Jabatan"
                       formControlProps={{
                         fullWidth: true
                       }}

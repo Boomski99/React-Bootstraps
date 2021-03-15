@@ -9,6 +9,10 @@ import React from 'react';
 import GridItem from 'components/Grid/GridItem';
 import CardFooter from 'components/Card/CardFooter';
 
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const styles = {
   cardCategoryWhite: {
     color: "rgba(255,255,255,255)",
@@ -38,14 +42,14 @@ export default function NewRoles() {
         <GridItem xs={12} sm={12} md={10}>
           <Card>
             <CardHeader color="info">
-              <h4 className={classes.cardTitleWhite}>Data Jabatan</h4>
-              <p className={classes.cardCategoryWhite}>Ubah Jabatan</p>
+              <h4 className={classes.cardTitleWhite}>Karyawan Baru</h4>
+              <p className={classes.cardCategoryWhite}>Tambah Karyawan</p>
             </CardHeader>
             <CardBody>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={7}>
                   <CustomInput
-                      labelText="Nama Jabatan"
+                      labelText="Nama Karyawan"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -53,6 +57,37 @@ export default function NewRoles() {
                         disabled: false
                       }}
                     />
+                </GridItem>
+                <GridItem xs={12} sm={12} md={7}>
+                  <CustomInput
+                      labelText="Jam Kerja Karyawan"
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        disabled: false
+                      }}
+                    />
+                </GridItem>
+                <GridItem xs={12} sm={12} md={7}>
+                  <CustomInput
+                      labelText="Gaji Pokok Karyawan"
+                      inputProps="Rp."
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        disabled: false
+                      }}
+                    />
+                </GridItem>
+                <GridItem xs={12} sm={12} md={7}>
+                  <p>Departemen :</p>
+                  <DropdownButton id="dropdown-basic-button" title="Departemen">
+                    <Dropdown.Item href="#/action-1">Gali Kubur</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Tukang Sayur</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Masak Nasi</Dropdown.Item>
+                  </DropdownButton>
                 </GridItem>
               </GridContainer>
             </CardBody>
